@@ -1,5 +1,4 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables
-
+import 'package:todoey/widget/task_tile.dart';
 import 'package:flutter/material.dart';
 
 class TasksScreen extends StatelessWidget {
@@ -12,7 +11,7 @@ class TasksScreen extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.lightBlueAccent,
         child: const Icon(Icons.add),
-        onPressed: (){},
+        onPressed: () {},
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -22,8 +21,8 @@ class TasksScreen extends StatelessWidget {
                 top: 60.0, left: 30.0, right: 30.0, bottom: 30.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const CircleAvatar(
+              children: const [
+                 CircleAvatar(
                   child: Icon(
                     Icons.list,
                     size: 40.0,
@@ -32,10 +31,10 @@ class TasksScreen extends StatelessWidget {
                   backgroundColor: Colors.white,
                   radius: 30.0,
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 10.0,
                 ),
-                const Text(
+                 Text(
                   'Todoey',
                   style: TextStyle(
                     color: Colors.white,
@@ -43,7 +42,7 @@ class TasksScreen extends StatelessWidget {
                     fontWeight: FontWeight.w700,
                   ),
                 ),
-                const Text(
+                Text(
                   '12 todos',
                   style: TextStyle(
                     color: Colors.white,
@@ -55,12 +54,14 @@ class TasksScreen extends StatelessWidget {
           ),
           Expanded(
             child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
               height: 300.0,
               decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(20.0),
                       topRight: Radius.circular(20.0))),
+              child: const TaskList(),
             ),
           ),
         ],
@@ -68,3 +69,6 @@ class TasksScreen extends StatelessWidget {
     );
   }
 }
+
+
+
