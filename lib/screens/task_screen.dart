@@ -1,5 +1,8 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:todoey/widget/task_tile.dart';
 import 'package:flutter/material.dart';
+import 'package:todoey/screens/add_task_screen.dart';
 
 class TasksScreen extends StatelessWidget {
   const TasksScreen({Key? key}) : super(key: key);
@@ -11,7 +14,9 @@ class TasksScreen extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.lightBlueAccent,
         child: const Icon(Icons.add),
-        onPressed: () {},
+        onPressed: () {
+          showModalBottomSheet(context: context, builder: (context) => AddTaskScreen());
+        },
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -22,7 +27,7 @@ class TasksScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: const [
-                 CircleAvatar(
+                CircleAvatar(
                   child: Icon(
                     Icons.list,
                     size: 40.0,
@@ -34,7 +39,7 @@ class TasksScreen extends StatelessWidget {
                 SizedBox(
                   height: 10.0,
                 ),
-                 Text(
+                Text(
                   'Todoey',
                   style: TextStyle(
                     color: Colors.white,
@@ -69,6 +74,3 @@ class TasksScreen extends StatelessWidget {
     );
   }
 }
-
-
-
