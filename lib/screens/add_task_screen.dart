@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 class AddTaskScreen extends StatelessWidget {
@@ -8,15 +10,31 @@ class AddTaskScreen extends StatelessWidget {
     return Container(
       color: const Color(0xff757575),
       child: Container(
-        child: const Center(
-          child: Text(
+        child: Column(children: [
+          Text(
             'Add Task',
             style: TextStyle(
               color: Colors.lightBlueAccent,
               fontSize: 30.0,
             ),
           ),
-        ),
+          TextField(
+            autofocus: true,
+            textAlign: TextAlign.center,
+          ),
+          TextButton(
+            child: CircleAvatar(
+              backgroundColor: Colors.lightBlueAccent,
+              radius: 30.0,
+              child: Icon(Icons.add,
+              size: 30.0,
+              color: Colors.white,),
+            ),
+            onPressed: () {
+              //add task to list
+            },
+          ),
+        ]),
         decoration: const BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.only(
