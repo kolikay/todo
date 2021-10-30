@@ -1,13 +1,11 @@
 // ignore_for_file: prefer_const_constructors, avoid_print, use_key_in_widget_constructors, unused_local_variable, must_be_immutable
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class AddTaskScreen extends StatelessWidget {
-  Function addTaskCallBack;
-  AddTaskScreen(this.addTaskCallBack);
-  
   @override
   Widget build(BuildContext context) {
-   late String newTaskTitle;
+    late String newTaskTitle;
     return Container(
       color: const Color(0xff757575),
       child: Container(
@@ -37,7 +35,8 @@ class AddTaskScreen extends StatelessWidget {
               ),
             ),
             onPressed: () {
-              addTaskCallBack(newTaskTitle);
+              Provider.of(context).addTask(newTaskTitle);
+              Navigator.pop(context);
             },
           ),
         ]),

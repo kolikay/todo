@@ -8,6 +8,7 @@ import 'package:provider/provider.dart';
 class TaskList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // var provider = Provider.of<TaskData>(context);
     return ListView.builder(
       itemBuilder: (context, index) {
         return TaskTile(
