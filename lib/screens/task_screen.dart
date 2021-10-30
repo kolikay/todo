@@ -3,19 +3,10 @@
 import 'package:todoey/widget/task_list.dart';
 import 'package:flutter/material.dart';
 import 'package:todoey/screens/add_task_screen.dart';
-import 'package:todoey/models/task.dart';
+import 'package:provider/provider.dart';
+import 'package:todoey/models/task_data.dart';
 
-class TasksScreen extends StatefulWidget {
-  @override
-  State<TasksScreen> createState() => _TasksScreenState();
-}
-
-class _TasksScreenState extends State<TasksScreen> {
-  final List<Task> task = [
-    Task(name: 'bay bread'),
-    Task(name: 'buy milk'),
-    Task(name: 'buy food')
-  ];
+class TasksScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -28,9 +19,9 @@ class _TasksScreenState extends State<TasksScreen> {
           showModalBottomSheet(
               context: context,
               builder: (context) => AddTaskScreen((newTaskTitle) {
-                    setState(() {
-                      task.add(Task(name: newTaskTitle));
-                    });
+                    // setState(() {
+                    //   task.add(Task(name: newTaskTitle));
+                    // });
                     Navigator.pop(context);
                   }));
         },
@@ -65,7 +56,7 @@ class _TasksScreenState extends State<TasksScreen> {
                   ),
                 ),
                 Text(
-                  '${task.length} todos',
+                  '${Provider.of<TaskData>(context).task.length} todos',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 18.0,
@@ -83,7 +74,7 @@ class _TasksScreenState extends State<TasksScreen> {
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(20.0),
                       topRight: Radius.circular(20.0))),
-              child: TaskList(task),
+              child: TaskList(),
             ),
           ),
         ],

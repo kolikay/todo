@@ -1,11 +1,10 @@
-// ignore_for_file: prefer_const_constructors, avoid_print, use_key_in_widget_constructors, unused_local_variable
+// ignore_for_file: prefer_const_constructors, avoid_print, use_key_in_widget_constructors, unused_local_variable, must_be_immutable
 import 'package:flutter/material.dart';
 
 class AddTaskScreen extends StatelessWidget {
   Function addTaskCallBack;
   AddTaskScreen(this.addTaskCallBack);
   
-
   @override
   Widget build(BuildContext context) {
    late String newTaskTitle;
