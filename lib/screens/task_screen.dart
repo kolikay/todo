@@ -56,7 +56,7 @@ class TasksScreen extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  '${Provider.of<TaskData>(context).task.length} todos',
+                  '${Provider.of<TaskData>(context).taskCount} todos',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 18.0,
